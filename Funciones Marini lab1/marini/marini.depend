@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1537468097 source:c:\users\dani\desktop\funciones marini lab1\marini\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"marini.h"
+
+1537414166 c:\users\dani\desktop\funciones marini lab1\marini\marini.h
+
+1537414166 source:c:\users\dani\desktop\funciones marini lab1\marini\marini.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
