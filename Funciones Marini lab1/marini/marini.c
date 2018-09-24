@@ -4,7 +4,32 @@
 
 
 
-int getInt(int* pResultado,char* mensaje,char* mensajeError,int minimo,int maximo,int reintentos)
+float getFloat(char mensaje[])
+{
+    float auxiliar;
+    printf("%s",mensaje);
+    scanf("%f",&auxiliar);
+    return auxiliar;
+}
+
+int getInt(char mensaje[])
+{
+    int auxiliar;
+    printf("%s",mensaje);
+    scanf("%d",&auxiliar);
+    return auxiliar;
+}
+
+char getChar(char mensaje[])
+{
+    char auxiliar;
+    printf("%s",mensaje);
+    fflush(stdin);
+    scanf("%c",&auxiliar);
+    return auxiliar;
+}
+
+int getIntReintentos(int* pResultado,char* mensaje,char* mensajeError,int minimo,int maximo,int reintentos)
 {
     {
         int ret;
