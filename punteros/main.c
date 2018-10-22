@@ -1,15 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-void cargarEmpleados(eEmpleado* empleado);
+//#define TAM 1
 
 typedef struct
 {
-    int fecha;
+    int dia;
     int mes;
     int anio;
-}eFecha;
+} eFecha;
 
 
 typedef struct
@@ -19,33 +18,24 @@ typedef struct
     float sueldo;
     eFecha fecha;
 
-}eEmpleado;
+} eEmpleado;
+
+
+
+void mostrarEmpleados(eEmpleado* pEmployeed);
+
+void cargarEmpleados(eEmpleado* pEmployeed);
 
 int main()
 {
-    eEmpleado empleado;
 
 
+    eEmpleado empleados;
 
+    cargarEmpleados(&empleados);
 
+    mostrarEmpleados(&empleados);
 
-   /* int vec[5];
-
-
-    for(int i=0;i<5  ;i++)
-    {
-        printf("Ingrese un numero: ");
-        scanf("%d", vec + i);
-
-    }
-
-    for(int i=0;i<5  ;i++)//esta es la forma que hace pro
-    {
-        printf("\nSu numero es %d", *(vec + i));
-
-
-    }
-        */
 
     return 0;
 }
@@ -56,15 +46,50 @@ void cargarEmpleados(eEmpleado* pEmployeed)
 {
     char auxNombre[20];
 
-    printf("\nIngrese su legajo: ");
-    scanf("%d",&pEmployeed->legajo);
 
-    printf("\nIngrese su nombre: ")
-    strcpy(pEmployeed->nombre);
+    //for(int i=0; i<TAM ; i++ )
+    //{
 
 
+        printf("\nIngrese su legajo: ");
+        scanf("%d",&pEmployeed->legajo);
+
+        printf("\nIngrese su nombre: ");
+        scanf("%s",auxNombre);
+        strcpy(pEmployeed->nombre+1,auxNombre);
+
+        printf("\nIngrese su sueldo: ");
+        scanf("%f",&pEmployeed->sueldo);
+
+        printf("\nIngrese el dia: ");
+        scanf("%d",&pEmployeed->fecha.dia);
 
 
+        printf("\nIngrese el mes: ");
+        scanf("%d",&pEmployeed->fecha.mes);
 
+        printf("\nIngrese el anio: ");
+        scanf("%d",&pEmployeed->fecha.anio);
+
+        system("cls");
+
+  //  }
 
 }
+
+
+
+void mostrarEmpleados(eEmpleado* pEmployeed)
+{
+
+   // for(int i=0; i<TAM ; i++ )
+    //{
+        printf("\nEstos son los datos del empleado: %s",pEmployeed->nombre);
+        printf("\nEl legajo del empleado es : %d",pEmployeed->legajo);
+        printf("\nEl sueldo del empleado es : %.2f",pEmployeed->sueldo);
+        printf("\nSu fecha es es : %d / %d / %d",pEmployeed->fecha.dia,pEmployeed->fecha.mes,pEmployeed->fecha.anio);
+
+
+    //}
+}
+
